@@ -1,0 +1,414 @@
+ html{
+  scroll-behavior: smooth;
+    scrollbar-color: var(--purple) var(--bg);
+}
+
+ :root {
+            --blue: rgb(65, 105, 225);
+            --purple: rgb(153, 50, 204);
+            --gold-light: #f5e6a8;
+            --primarybg: #222222;
+            --bg: #0b0b0b;
+            --card: rgba(255, 215, 100, 0.08);
+            --text: #ffffff;
+            --shadow: 0 0.5em 1em rgba(95, 95, 95, 0.493);
+           
+        }
+  
+
+body{
+    margin: 0;
+    background: radial-gradient(circle at left, var(--bg),var(--primarybg));
+    background-size: 400% 100%;
+    background-position: right;
+    background-attachment: fixed;
+    animation: moves 8s ease-in-out infinite alternate 500ms;
+    font-family: sans-serif;
+}
+
+/*Animação de background */
+@keyframes moves {
+    from{
+        background-position: right;
+    }
+    to{
+        background-position: left;
+    }
+}
+/*Navegação*/
+nav{
+  display: flex;
+  align-items: center;
+  height: auto;
+  padding: 5px 0 5px 0;
+  position: fixed;
+  width: 100%;
+  background: transparent;
+  transition: background-position 0.8s ease-in-out;
+  color: var(--text);
+  transition: background 1s ease-out;
+  z-index: 2;
+}
+a{
+    color: var(--text);
+    text-decoration: none;
+}
+nav:hover{
+    background: radial-gradient(
+    circle at  var(--x, 50%) var(--y, 50%),
+   transparent,var(--primarybg),transparent
+  );
+}
+
+/*img logo*/
+nav img{
+    height: 80px;
+    width: 80px;
+    margin: 0;
+    cursor: pointer;
+    transition: transform 400ms ease-in;
+    margin: 0 0 0 10px;
+}
+nav img{
+    transform: scale(1.1);
+}
+/*Lista*/
+nav ul{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  margin: 0;
+ font-weight: 700;
+  cursor: pointer;
+  
+}
+nav ol{
+     letter-spacing: 1px;
+  transition: letter-spacing 250ms linear;
+}
+nav ol:hover{
+    letter-spacing: 2px;
+}
+#ligth{
+    position: absolute;
+    color: rgba(255, 255, 255, 0.308);
+}
+/*Home*/
+    #Home{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        justify-self: center;
+        gap:10px;
+        height: 100vmin;
+        width: 100%;
+        background-color: transparent;
+        color: white;
+    }
+    #Home span{
+        font-weight: 500;
+        font-size: 20px;
+        letter-spacing: 2px;
+    }
+    #Home p{
+         font-weight: 500;
+        font-size: 20px;
+        letter-spacing: 2px;
+        color: var(--purple);
+    }
+    #Home h2{
+        font-weight: 700;
+        font-size: 50px;
+        letter-spacing: 2px;
+    }
+    #Home h2::after{
+        content: "Gabriel";
+        animation: name 2.2s ease-in-out 100ms both;
+    }
+    /*animação de digitação, manter fechado!*/
+    @keyframes name {
+        0%{
+            content: "|";
+        }
+        4%{
+            content: "";
+        }
+        5%{
+            content: "G";
+        }
+        12%{
+            content: "G|";
+        }
+        19%{
+            content:"G ";
+        }
+        20%{
+            content: "Ga";
+        }
+        27%{
+            content: "Ga|";
+        }
+        34%{
+            content: "Ga";
+        }
+        35%{
+            content:" Gab";
+        }
+        42%{
+            content: "Gab|";
+        }
+        49%{
+            content: "Gab";
+        }
+        50%{
+            content:" Gabr";
+        }
+        57%{
+            content: "Gabr|";
+        }
+        64%{
+            content: "Gabr";
+        }
+        65%{
+            content: " Gabri";
+        }
+        72%{
+            content: "Gabri|";
+        }
+        79%{
+            content: "Gabri";
+        }
+        80%{
+        content: "Gabrie";
+        }
+        87%{
+            content: "Gabrie|";
+        }
+        94%{
+            content: "Gabrie";
+        }
+        95%{
+        content: "Gabriel";
+        }
+        98.5%{
+            content: "Gabriel|";
+        }
+        99%{
+            content: "Gabriel";
+        }
+        100%{
+            content: "Gabriel.";
+        }
+}
+    /*personalisação icones*/
+    #icons{
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+        margin: 5px 0 0 0;
+    }
+    #icons i{
+        font-size: 20px;
+        cursor: pointer;
+        color: white;
+    }
+    /*sequencia de colors por nth-child selector*/
+    #icons i:nth-child(1):hover{
+        color: green;
+        transform: scale(1.2);
+    }
+    #icons i:nth-child(2):hover{
+        color: #ffffff;
+        transform: scale(1.2);
+    }
+    #icons i:nth-child(3):hover{
+        color: salmon;
+        transform: scale(1.2);
+    }
+   
+ /*Sobre Mim*/
+        #Sobre-Mim{
+            color: var(--text);
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;         
+            background-color: var(--primarybg);
+            justify-content: flex-start; 
+            gap: 30px;
+            padding: 30px 60px; 
+        }
+        #Sobre-Mim h1{
+            font-weight: 500;
+            letter-spacing: 2px;
+            border-bottom: 3px solid var(--purple);
+            color: var(--purple);
+            padding: 10px 0;
+            display: block;
+            font-size: 45px;
+        }
+        #Sobre-Mim p{
+            letter-spacing: 1.5px;
+            display: flex;
+            flex-wrap: wrap;
+            line-height: 1.7;
+            margin-bottom: 20px;
+            
+        }
+         #Texto{
+             width: 70%;
+             color: var(--text);
+        }
+        #ling{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin: 0 0 30px 0;
+            border-left: 2px solid var(--purple);
+            border-right: 2px solid var(--purple);
+            justify-self: center;
+            padding: 0 100px;
+        }
+        #text-vz{
+            width: 100px;
+            height: 100px;
+            background: rgba(255,255,255,0.05); 
+            border-radius: 12px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 50px;
+            cursor: pointer;
+            transition: background 300ms ease-in;
+            transition: transform 300ms ease-in-out;
+
+        }
+        #text-vz:nth-child(1):hover{
+            transform: scale(1.1);
+            background:firebrick;
+        }
+        #text-vz:nth-child(2):hover{
+            transform: scale(1.1);
+            background: royalblue;
+        }
+        #text-vz:nth-child(3):hover{
+            transform: scale(1.1);
+            background:gold;
+        }
+        #text-vz:nth-child(4):hover{
+            transform: scale(1.1);
+            background:cadetblue;
+        }
+        #text-vz:nth-child(5):hover{
+            transform: scale(1.1);
+            background: purple;
+        }
+        #text-vz:nth-child(6):hover{
+            transform: scale(1.1);
+            background:goldenrod;
+        }
+        #text-vz:nth-child(7):hover{
+            transform: scale(1.1);
+            background:darkmagenta;
+        }
+        #info{
+            display: flex;
+            align-self: flex-end;
+        }
+        /*Projetos*/
+            #Projetos{
+               color: var(--text);
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;         
+            justify-content: flex-start; 
+            gap: 10px;
+            padding: 30px 60px; 
+            width: 65%;
+            justify-self: center;
+            }
+            #Projetos h1{
+            font-weight: 500;
+            letter-spacing: 2px;
+            border-bottom: 3px solid var(--purple);
+            color: var(--purple);
+            padding: 10px 0;
+            display: block;
+            font-size: 45px;
+            }
+            #Projetos img{
+                height: 40%;
+                width: 50%;
+                background: linear-gradient(115deg, var(--primarybg), var(--bg));
+                border-top: 2px solid var(--blue);
+                border-left: 2px solid var(--blue);
+                padding: 20px 35px;
+                cursor: pointer;
+                transition: transform 500ms ease-in-out;
+                transition: padding 500ms ease-in-out;
+                z-index: 3;
+                margin: 20px 0 0 0 ;
+            }
+            #Projetos img:hover{
+                padding: 10px 20px;
+            }
+            #Projetos h2{
+                letter-spacing: 2px;
+                color: var(--purple);
+            }
+            #Projetos span{
+                letter-spacing: 2px;
+                line-height: 1.7;
+                padding: 0 0 20px 0;
+                border-bottom: 2px solid var(--purple);
+            }
+             #Projetos #hbrv{
+                color: var(--text);
+                border-bottom: 2px solid var(--blue);
+             }
+            #Projetos #hbrv::after{
+                content: "...";
+                font-family: serif;
+                margin: 0 0 0 5px;
+                animation: ping 1s infinite alternate ease-in-out 200ms;
+            }
+            @keyframes ping {
+                from{
+                    letter-spacing: 0px;
+                }
+                to{
+                    letter-spacing: 5px;
+                }
+            }
+            /*footer*/
+                footer{
+                    height: auto;
+                    padding: 20px 0 5px 0;
+                    background:linear-gradient(to right, var(--primarybg), var(--bg));
+                    border-top: solid 2px var(--purple);
+                    background-attachment: fixed;
+                    display: flex;
+                    flex-direction: row;
+                    gap: 10px;
+                }
+                footer img{
+                    height: 40px;
+                    width: 50px;
+                    cursor: pointer;
+                    display: inline;
+                    margin: 0 0 0 20px;
+                }
+                footer div{
+                    display: flex;
+                    flex-direction: row;
+                }
+                footer ol{
+                display: inline;
+                transition: 200ms color ease-in-out;
+                }
+                footer ol:hover{
+                color: var(--purple);
+                }
+ 
